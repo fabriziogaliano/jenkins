@@ -64,7 +64,7 @@ RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE
 
 ### Install Jenkins custom plugins
 RUN cp /docker/configurations/jenkins/plugins.txt /usr/local/bin/plugins.txt
-RUN /usr/local/bin/install-plugins.sh plugins.txt
+RUN /usr/local/bin/install-plugins.sh $(cat plugins.txt)
 
 ### Copy the expect script for npm login (for private registry)
 RUN mkdir -p /var/jenkins_home/assets

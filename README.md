@@ -39,3 +39,17 @@ services:
       - 80:8080
 
 ```
+
+# some screenshot to help configure jenkins properly
+
+![1](https://user-images.githubusercontent.com/22646600/41192696-0c910b04-6c02-11e8-99f8-ce4917987e26.JPG)
+
+![2](https://user-images.githubusercontent.com/22646600/41192705-208ff836-6c02-11e8-9775-ac3828567cfc.JPG)
+
+![3](https://user-images.githubusercontent.com/22646600/41192707-26d8652a-6c02-11e8-88a0-e5a3cd2e6b5d.JPG)
+
+![4](https://user-images.githubusercontent.com/22646600/41192708-26f7771c-6c02-11e8-9601-c2105e5d76cd.JPG)
+
+![5](https://user-images.githubusercontent.com/22646600/41192709-2715ffca-6c02-11e8-926d-f680b6572934.JPG)
+
+# Enjoy it

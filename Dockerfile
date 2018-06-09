@@ -3,7 +3,6 @@ FROM jenkins/jenkins:2.126
 LABEL maintainer "Fabrizio Galiano <fabrizio.galiano@hotmail.com>"
 
 ### Before upgrading pkgs version check everything!
-
 ENV DOCKER_COMPOSE_VER 1.21.2
 ENV PYTHON_VER 3.6.3
 ENV NODE_VER 8

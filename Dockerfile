@@ -63,8 +63,8 @@ RUN apt-get install -y docker-ce
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VER}/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 ### Install Jenkins custom plugins
-RUN cp /docker/configurations/jenkins/plugins.sh
-
+RUN chmod +x /docker/configurations/jenkins/plugins.sh
+RUN /docker/configurations/jenkins/plugins.sh
 
 ### Copy the expect script for npm login (for private registry)
 RUN mkdir -p /var/jenkins_home/assets

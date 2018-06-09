@@ -68,7 +68,7 @@ RUN /docker/configurations/jenkins/plugins.sh
 
 ### Copy the expect script for npm login (for private registry)
 RUN mkdir -p /var/jenkins_home/assets
-RUN cp /docker/configurations/npm/npmlogin.sh /var/jenkins_home/assets
+RUN cp /docker/configurations/npm/npmlogin.sh /var/jenkins_home/assets/npmlogin.sh
 RUN chmod +x /var/jenkins_home/assets/npmlogin.sh
 
 WORKDIR /var/jenkins_home

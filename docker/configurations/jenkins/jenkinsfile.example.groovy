@@ -10,7 +10,7 @@ pipeline {
 
     environment {
         // Assets and scripts
-        ASSETS_DIR = "/var/jenkins_home/assets"
+        ASSETS_DIR = "/docker/tools"
 
         // Default Docker build image name
         DOCKER_IMAGE_BUILD_NAME = 'ciserver'

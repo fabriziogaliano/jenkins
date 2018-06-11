@@ -60,6 +60,9 @@ stable"
 RUN apt-get update
 RUN apt-get install -y docker-ce
 
+### Remove apt cache
+RUN apt-get clean
+
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VER}/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 ### Install Jenkins custom plugins

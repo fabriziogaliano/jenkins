@@ -9,35 +9,25 @@ Images Ready-To-Go to use Jenkins Pipeline Plugin ;) --- you can find the jenkin
 Ovverride the docker-compose config with your own information:
 ```
 version: '3'
-
 networks:
   default:
     external:
       name: public
-
 services:
   jenkins:
     image: fabriziogaliano/jenkins
-
     restart: always
-
     container_name: jenkins
-
     user: root
-
     tty: true
-
     volumes:
       - /root/.ssh:/root/.ssh
       - ./data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-
     environment:
       JAVA_OPT: "JAVA_OPT=-Xmx512m -Dhudson.footerURL=https://ci.example.it"
-
     ports:
       - 80:8080
-
 ```
 
 # some screenshot to help configure jenkins properly

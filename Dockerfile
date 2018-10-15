@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.127
+FROM jenkins/jenkins:2.60.3
 
 LABEL maintainer "Fabrizio Galiano <fabrizio.galiano@hotmail.com>"
 

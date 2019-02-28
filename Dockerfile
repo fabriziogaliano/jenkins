@@ -1,5 +1,6 @@
 #FROM jenkins/jenkins:2.147
-FROM jenkins/jenkins:2.161
+#FROM jenkins/jenkins:2.161
+FROM jenkins/jenkins:2.166
 
 LABEL maintainer "Fabrizio Galiano <fabrizio.galiano@hotmail.com>"
 

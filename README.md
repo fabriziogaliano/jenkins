@@ -6,6 +6,8 @@
 
 Images Ready-To-Go to use Jenkins Pipeline Plugin ;) --- you can find the jenkinsfile inside this repo
 
+[update 20190628]: added parallel ssh on v2.166.1
+
 Ovverride the docker-compose config with your own information:
 ```
 version: '3'

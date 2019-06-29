@@ -5,9 +5,9 @@ FROM jenkins/jenkins:2.166
 LABEL maintainer "Fabrizio Galiano <fabrizio.galiano@hotmail.com>"
 
 ### Before upgrading pkgs version check everything!
-ENV DOCKER_COMPOSE_VER 1.21.2
+ENV DOCKER_COMPOSE_VER 1.24.1
 ENV PYTHON_VER 3.6.3
-ENV NODE_VER 8
+ENV NODE_VER 10
 
 USER root
 
@@ -33,7 +33,8 @@ llvm \
 libncurses5-dev \
 libncursesw5-dev \
 xz-utils \
-tk-dev
+tk-dev \
+pssh
 
 ### INSTALL NODEJS LTS [8] 09062018
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VER}.x | bash -

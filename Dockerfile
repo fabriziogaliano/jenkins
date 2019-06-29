@@ -36,7 +36,7 @@ xz-utils \
 tk-dev \
 pssh
 
-### INSTALL NODEJS LTS [8] 09062018
+### INSTALL NODEJS LTS [10] 20190629
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VER}.x | bash -
 RUN apt-get install nodejs
 
@@ -63,10 +63,11 @@ stable"
 RUN apt-get update
 RUN apt-get install -y docker-ce
 
+### INSTALL Docker Compose
+RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VER}/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+
 ### Remove apt cache
 RUN apt-get clean
-
-RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VER}/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 ### Install Jenkins custom plugins
 RUN chmod +x /docker/configurations/jenkins/plugins.sh

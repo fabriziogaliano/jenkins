@@ -6,10 +6,10 @@
 
 Images Ready-To-Go to use Jenkins Pipeline Plugin ;) --- you can find the jenkinsfile inside this repo
 
-### update 20190629 : v2.166.1
- - added parallel ssh
- - upgrade node to 10 ver.
- - upgrade composer to 1.24.1
+### update 20201029 
+ - jenkins: v2.249.2-lts
+ - node: 14-lts ver.
+ - composer: 1.27.4
 
 Ovverride the docker-compose config with your own information:
 ```

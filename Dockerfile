@@ -1,14 +1,11 @@
-#FROM jenkins/jenkins:2.147
-#FROM jenkins/jenkins:2.161
-#FROM jenkins/jenkins:2.166
-FROM jenkins/jenkins:2.182
+FROM jenkins/jenkins:2.249.2-lts
 
 LABEL maintainer "Fabrizio Galiano <fabrizio.galiano@hotmail.com>"
 
 ### Before upgrading pkgs version check everything!
-ENV DOCKER_COMPOSE_VER 1.24.1
+ENV DOCKER_COMPOSE_VER 1.27.4
 ENV PYTHON_VER 3.6.3
-ENV NODE_VER 10
+ENV NODE_VER 14
 
 USER root
 

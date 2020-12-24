@@ -4,12 +4,14 @@
 
 # Jenkins docker image with docker-python-node-npm preinstalled for Pipeline
 
-Images Ready-To-Go to use Jenkins Pipeline Plugin ;) --- you can find the jenkinsfile inside this repo
+Images Ready-To-Go --- you can find the jenkinsfile inside this repo
 
-### update 20201029 
- - jenkins: v2.249.2-lts
- - node: 14-lts ver.
+### update 20201224
+ - jenkins: v2.263.1-lts
+ - nvm v0.37.2
+ - node: 14.15.3-lts
  - composer: 1.27.4
+ - removed the plugIn installation by default [anyway, you can remove the comments in the Dockerfile and redo the Docker build if you want]
 
 Ovverride the docker-compose config with your own information:
 ```
@@ -30,7 +32,7 @@ services:
       - ./data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      JAVA_OPT: "JAVA_OPT=-Xmx512m -Dhudson.footerURL=https://ci.example.it"
+      JAVA_OPT: "JAVA_OPT=-Xmx4g -Dhudson.footerURL=https://ci.example.it"
     ports:
       - 80:8080
 ```

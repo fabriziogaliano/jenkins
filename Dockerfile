@@ -1,11 +1,12 @@
-FROM jenkins/jenkins:2.249.2-lts
+FROM jenkins/jenkins:2.263.1-lts
 
 LABEL maintainer "Fabrizio Galiano <fabrizio.galiano@hotmail.com>"
 
 ### Before upgrading pkgs version check everything!
 ENV DOCKER_COMPOSE_VER 1.27.4
 ENV PYTHON_VER 3.6.3
-ENV NODE_VER 14
+ENV NODE_VER 14.15.3
+ENV NVM_VER v0.37.2
 
 USER root
 
@@ -34,9 +35,14 @@ xz-utils \
 tk-dev \
 pssh
 
-### INSTALL NODEJS LTS [10] 20190629
-RUN curl -sL https://deb.nodesource.com/setup_${NODE_VER}.x | bash -
-RUN apt-get install nodejs
+### INSTALL NVM / NODEJS
+#RUN curl -sL https://deb.nodesource.com/setup_${NODE_VER}.x | bash -
+#RUN apt-get install nodejs
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VER}/install.sh | bash \
+&& export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" \
+&& [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
+&& nvm install ${NODE_VER}
 
 ### INSTALL PYTHON 3.6
 WORKDIR /tmp
@@ -68,8 +74,8 @@ RUN curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE
 RUN apt-get clean
 
 ### Install Jenkins custom plugins
-RUN chmod +x /docker/configurations/jenkins/plugins.sh
-RUN /docker/configurations/jenkins/plugins.sh
+#RUN chmod +x /docker/configurations/jenkins/plugins.sh
+#RUN /docker/configurations/jenkins/plugins.sh
 
 WORKDIR /var/jenkins_home
 
